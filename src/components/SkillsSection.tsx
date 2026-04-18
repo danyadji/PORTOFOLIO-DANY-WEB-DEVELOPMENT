@@ -9,24 +9,28 @@ const SKILLS = [
     title: "Frontend",
     icon: "layers",
     color: "primary",
-    tags: ["React", "Next.js", "Tailwind", "TypeScript"],
-    percent: 95,
+    tags: ["React", "Next.js", "Tailwind"],
   },
   {
     id: "02",
     title: "Backend",
     icon: "database",
     color: "secondary",
-    tags: ["Node.js", "PostgreSQL", "Redis", "GraphQL"],
-    percent: 88,
+    tags: ["Node.js", "Laravel", "MySQL"],
   },
   {
     id: "03",
+    title: "CMS & E-Commerce",
+    icon: "store",
+    color: "secondary",
+    tags: ["WordPress", "WooCommerce"],
+  },
+  {
+    id: "04",
     title: "Tools",
     icon: "terminal",
     color: "tertiary",
-    tags: ["Docker", "AWS", "GitHub", "CI/CD"],
-    percent: 90,
+    tags: ["GitHub", "Git", "Postman", "Figma", "Vite", "AI Assistant"],
   },
 ];
 
@@ -79,20 +83,6 @@ export function SkillsSection() {
                     {tag}
                   </span>
                 ))}
-              </div>
-              <div className="mt-8 flex items-center gap-2">
-                <div className="h-1 flex-1 bg-surface-variant rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.percent}%` }}
-                    transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-                    viewport={{ once: true }}
-                    className={`h-full bg-${skill.color} shadow-[0_0_8px_var(--color-${skill.color})]`}
-                  />
-                </div>
-                <span className={`text-[10px] font-bold text-${skill.color}`}>
-                  {skill.percent}%
-                </span>
               </div>
             </motion.div>
           ))}

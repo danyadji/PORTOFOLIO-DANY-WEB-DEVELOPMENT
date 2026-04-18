@@ -17,7 +17,7 @@ export function HeroSection() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-1/2 -right-20 -translate-y-1/2 w-[40rem] h-[40rem] opacity-70 blur-3xl rounded-full bg-gradient-to-br from-primary via-secondary to-transparent"
+        className="absolute top-1/2 -right-20 -translate-y-1/2 w-[40rem] h-[40rem] opacity-40 blur-3xl rounded-full bg-gradient-to-br from-primary via-secondary to-transparent"
       />
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto w-full">
@@ -55,19 +55,30 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, scale: 0.8, x: 50 }}
+          whileInView={{ opacity: 1, scale: 1.1, x: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative hidden lg:flex justify-center items-center"
+          className="relative hidden lg:flex justify-end items-center"
         >
-          <div className="relative w-full aspect-square max-w-lg">
+          <motion.div
+            animate={{
+              y: [0, -20, 0],
+              rotate: [0, 2, 0]
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="relative w-full aspect-square max-w-2xl"
+          >
             <img
-              alt="3D fluid glass sculpture"
-              className="w-full h-full object-contain filter drop-shadow-[0_0_50px_rgba(173,198,255,0.3)]"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT910g88Y8yn4W0TJjHH3ue-n83209Htk9qweS_eOPv4gwSLlesEZsF3KPhDVcaUN8959aLoMSLBC1-2zqe79ZkHhoguS8FuHMR9vG__U8Hu09LsDFbOHnuYX5gY1qppJLHdXcdjN2AB0r_cbhI0Cu0TH9Dx95FWONqkzaUtPH2PVHSvCklK-gzVPeUe8zRzOod4TherOJKgQ_kK1pd8WOzlqWICfuFpSvuwWFKcXAv66ovepj5C-EmYGJL3J0Rog7ordNzFeNv9o"
+              alt="Futuristic 3D Shape"
+              className="w-full h-full object-contain drop-shadow-[0_0_80px_rgba(221,183,255,0.2)]"
+              src="/assets/images/hero-shape-seamless.svg"
             />
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
